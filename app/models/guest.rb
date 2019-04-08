@@ -33,32 +33,18 @@ class Guest
   end
 
   #returns an array of all guests who have made over 1 trip
-  def self.pro_traveler
-    guests_count = {}
-    @@all.each {|guest| guests_count[guest] = 0}
-
-    guests_count.select do |guest_for_count|
-      Trip.all.each do |trip|
-        if trip.guest == guest_for_count
-          guests_count[guest_for_count] += 1
-        end
-      end
-    end
-
-    guests_count.select {|guest, count| count > 1}.keys[0]
-
+  def self.pro_traveller
+    @@all.select {|guest| guest.trip_count > 1}
   end
 
   #returns an array of all listings where the guest has stayed
   def listings
-    self.trips.map do |trip|
-      trip.listing
-    end
+    self.trips.map {|trip| trip.listing}.uniq
   end
 
   #returns the number of trips a guest has taken
   def trip_count
-    self.trips.length
+    trips.length
   end
 
 end
