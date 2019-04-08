@@ -24,11 +24,11 @@ d1 = Dessert.new("Cheesecake", b1)
 d2 = Dessert.new("Chocolate Syrup", b2)
 d3 = Dessert.new("Fruit ice cream", b1)
 
-i1 = Ingredient.new(10, d1)
-i2 = Ingredient.new(15, d3)
-i3 = Ingredient.new(20, d3)
-i4 = Ingredient.new(15, d2)
-i5 = Ingredient.new(20, d1)
+i1 = Ingredient.new("chocolate", 10, d1)
+i2 = Ingredient.new("cream", 15, d3)
+i3 = Ingredient.new("strawberry", 20, d3)
+i4 = Ingredient.new("jam", 15, d2)
+i5 = Ingredient.new("egg", 20, d1)
 
 
 Pry.start
