@@ -33,7 +33,7 @@ class Guest
   end
 
   #returns an array of all guests who have made over 1 trip
-  def self.Guest.find_all_by_name("Fran")pro_traveler
+  def self.pro_traveler
     guests_count = {}
     @@all.each {|guest| guests_count[guest] = 0}
 
@@ -45,7 +45,7 @@ class Guest
       end
     end
 
-    guests_count.select {|guest, count| count > 1}
+    guests_count.select {|guest, count| count > 1}.keys[0]
 
   end
 
