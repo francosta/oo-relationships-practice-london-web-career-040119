@@ -15,4 +15,12 @@ class Ingredient
     @@all
   end
 
+  def bakery
+    @dessert.bakery
+  end
+
+  def self.find_all_by_name(name)
+    @@all.select {|ingredient| ingredient.name.include?(name)}
+  end
+
 end
