@@ -43,19 +43,7 @@ class Listing
   end
 
   def self.most_popular
-    listings_count = {}
-    @@all.each {|listing| listings_count[listing] = 0}
-
-    listings_count.select do |listing_for_count|
-      Trip.all.each do |trip|
-        if trip.listing == listing_for_count
-          listings_count[listing_for_count] += 1
-        end
-      end
-    end
-
-    listings_count.max_by {|city, count| count}[0]
-
+    @@all.max_by {|listing| listing.trip_count}
   end
 
 
