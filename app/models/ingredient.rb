@@ -20,7 +20,8 @@ class Ingredient
   end
 
   def self.find_all_by_name(name)
-    @@all.select {|ingredient| ingredient.name.include?(name)}
+    ing = @@all.select {|ingredient| ingredient.name.include?(name)}
+    ing.map {|ingr| ingr.name}.join(", ")
   end
 
 end

@@ -19,9 +19,7 @@ class Dessert
   end
 
   def calories
-    total_calories = 0
-    self.ingredients.each {|ingredient| total_calories += ingredient.calorie_count}
-    total_calories
+    self.ingredients.collect {|ingredient| ingredient.calorie_count}.sum
   end
 
 end

@@ -22,9 +22,9 @@ class Bakery
 
   def average_calories
     total_calories = 0
-    ingredients_count = self.ingredients.count
+    desserts_count = self.desserts.count
     self.ingredients.each {|ingredient| total_calories += ingredient.calorie_count}
-    total_calories/ingredients_count
+    total_calories/desserts_count
   end
 
   def self.all
