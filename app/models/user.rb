@@ -37,4 +37,8 @@ class User
    @@all.select {|user| if user.pledge_count > 1 then user end}
   end
 
+  def self.project_creator
+    Project.all.map {|project| project.user_creator}.uniq
+  end
+
 end
